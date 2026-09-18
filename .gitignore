@@ -1,9 +1,14 @@
 conversations/
 
-# agents — ignore tool-generated dirs, but keep the tracked skill links visible.
-# `.claude/*` (contents) rather than `.claude` (the dir) so the negation can descend.
+# agents — track only the hand-written skill symlinks; everything else under
+# these tool dirs (including plugin-generated openspec-* skills) stays ignored.
+# Each level needs its own `/*` + negation, because git does not descend into
+# an ignored directory.
 .claude/*
 !.claude/skills/
+.claude/skills/*
+!.claude/skills/skill-linker
+!.claude/skills/skill-demo
 .opencode
 .agents/*
 !.agents/skills/
