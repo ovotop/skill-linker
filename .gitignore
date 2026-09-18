@@ -1,1 +1,10 @@
 conversations/
+
+# agents — ignore tool-generated dirs, but keep the tracked skill links visible.
+# `.claude/*` (contents) rather than `.claude` (the dir) so the negation can descend.
+.claude/*
+!.claude/skills/
+.opencode
+.agents/*
+!.agents/skills/
+.sisyphus
